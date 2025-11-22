@@ -14,7 +14,9 @@
 ---
 include:
   - board: glove80_lh
+    cmake-args: -DZEPHYR_SCA_VARIANT=dtdoctor
   - board: glove80_rh
+    cmake-args: -DZEPHYR_SCA_VARIANT=dtdoctor
 
   - board: eyelash_corne_right
     shield: nice_view
