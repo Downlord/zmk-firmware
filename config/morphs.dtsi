@@ -20,7 +20,7 @@ ZMK_MOD_MORPH(slashquestion, bindings = <&kp LS(N7)>, <&kp LS(MINUS)>; mods = <(
 ZMK_MOD_MORPH(hashtilde, bindings = <&kp BSLH>, <&kp RA(RBKT)>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // aigu or grave (when shifted)
-ZMK_MOD_MORPH(aigugrave, bindings = <&aigu_nodead>, <&grave_nodead>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+// ZMK_MOD_MORPH(aigugrave, bindings = <&aigu_nodead>, <&grave_nodead>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 // aigu or grave (when shifted)
 ZMK_MOD_MORPH(umlauta, bindings = <&kp A>, <&kp RA(SQT)>; mods = <(MOD_LSFT|MOD_RSFT)>;)
