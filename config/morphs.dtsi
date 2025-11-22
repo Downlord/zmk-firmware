@@ -1,0 +1,38 @@
+// open parenthesis or pointy bracket (when shifted)
+ZMK_MOD_MORPH(parpbropen, bindings = <&kp LS(N8)>, <&kp NON_US_BSLH>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// close parenthesis or pointy bracket (when shifted)
+ZMK_MOD_MORPH(parpbrclose, bindings = <&kp LS(N9)>, <&kp LS(NON_US_BSLH)>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// open bracket or braces (when shifted)
+ZMK_MOD_MORPH(brbropen, bindings = <&kp RA(N8)>, <&kp RA(N7)>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// close bracket or braces (when shifted)
+ZMK_MOD_MORPH(brbrclose, bindings = <&kp RA(N9)>, <&kp RA(N0)>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// backslash and pipe (when shifted)
+ZMK_MOD_MORPH(bslashpipe, bindings = <&kp RA(MINUS)>, <&kp RA(NON_US_BSLH)>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// slash or questionmark (when shifted)
+ZMK_MOD_MORPH(slashquestion, bindings = <&kp LS(N7)>, <&kp LS(MINUS)>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// hash or tilde (when shifted)
+ZMK_MOD_MORPH(hashtilde, bindings = <&kp BSLH>, <&kp RA(RBKT)>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// aigu or grave (when shifted)
+ZMK_MOD_MORPH(aigugrave, bindings = <&aigu_nodead>, <&grave_nodead>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// aigu or grave (when shifted)
+ZMK_MOD_MORPH(umlauta, bindings = <&kp A>, <&kp RA(SQT)>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// aigu or grave (when shifted)
+ZMK_MOD_MORPH(umlauto, bindings = <&kp O>, <&kp RA(SEMI)>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// aigu or grave (when shifted)
+ZMK_MOD_MORPH(umlautu, bindings = <&kp U>, <&kp RA(LBKT)>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// aigu or grave (when shifted)
+ZMK_MOD_MORPH(umlautsz, bindings = <&kp S>, <&kp RA(MINUS)>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+// single or doublequote (when shifted)
+ZMK_MOD_MORPH(singledoublequotes, bindings = <&kp LS(BSLH)>, <&kp LS(N2)>; mods = <(MOD_LSFT|MOD_RSFT)>;)

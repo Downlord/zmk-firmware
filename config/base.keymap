@@ -71,6 +71,8 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 #include "macros.dtsi"
 #include "leader.dtsi"
 #include "mouse.dtsi"
+// Morphs  used for en keys in de keyboard
+#include "morphs.dtsi"
 
 /* Nav cluster */
 
@@ -220,9 +222,9 @@ ZMK_BASE_LAYER(Base,
 //├─────────────┼───────────────┼───────────────┼───────────────┼───────────────┤ ├───────────────┼───────────────┼───────────────┼─────────────┼────────────────┤
     &hml LGUI A   &hml LALT S     &hml LSHFT D    &hml LCTRL T    &kp G         ,   &kp H           &hmr LCTRL J    &hmr RSHFT K    &hmr LALT L   &hmr LGUI BSLH ,
 //├─────────────┼───────────────┼───────────────┼───────────────┼───────────────┤ ├───────────────┼───────────────┼───────────────┼─────────────┼────────────────┤
-    &kp Y         &kp X           &kp C           &kp V           &kp B         ,   &kp N           &kp M           &kp M           &dot_morph    &kp T         ,
+    &kp Y         &kp X           &kp C           &kp V           &kp B         ,   &kp N           &kp M           &kp COMMA       &kp DOT       &slashquestion ,
 //╰─────────────┼───────────────┴───────────────┼───────────────┼───────────────┤ ├───────────────┼───────────────┼───────────────┴──────────────────────────────╯
-                                  &lt FN BSPC     &lt MOUSE DEL   &lt FN ESC    ,   &rt FN RET       &rt NAV TAB    &rt SYM SPACE
+                                  &lt FN BSPC     &lt MOUSE DEL   &lt FN ESC    ,   &rt FN RET      &rt NAV TAB     &rt SYM SPACE
 //                              ╰───────────────┴───────────────┴───────────────╯ ╰───────────────┴───────────────┴───────────────╯
 )
 
@@ -232,7 +234,7 @@ ZMK_BASE_LAYER(Engram,
 //├─────────────┼───────────────┼───────────────┼───────────────┼───────────────┤ ├───────────────┼───────────────┼───────────────┼─────────────┼────────────────┤
     &hml LGUI C   &hml LALT I     &hml LCTRL E    &hml LSHIFT A   &kp COMMA     ,   &kp DOT         &hmr RSHFT J    &hmr LCTRL K    &hmr LALT L   &hmr LGUI BSLH ,
 //├─────────────┼───────────────┼───────────────┼───────────────┼───────────────┤ ├───────────────┼───────────────┼───────────────┼─────────────┼────────────────┤
-    &kp G         &kp X           &kp J           &kp K           &kp FSLH      ,   &kp FSLH        &kp M           &comma_morph    &dot_morph    &qexcl         ,
+    &kp G         &kp X           &kp J           &kp K           &kp FSLH      ,   &kp FSLH        &kp M           &kp COMMA       &kp DOT       &slashquestion ,
 //╰─────────────┼───────────────┴───────────────┼───────────────┼───────────────┤ ├───────────────┼───────────────┼───────────────┴──────────────────────────────╯
                                   &lt FN BSPC     &lt MOUSE DEL   &lt FN ESC    ,   &rt FN RET      &rt NAV TAB     &rt SYM SPACE
 //                              ╰───────────────┴───────────────┴───────────────╯ ╰───────────────┴───────────────┴───────────────╯
