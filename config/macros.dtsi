@@ -1,0 +1,45 @@
+#define MACRO_TAP_FAST 2
+#define MACRO_WAIT_FAST 0
+
+ZMK_BEHAVIOR(aigu_nodead,          macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp EQUAL>, <&kp SPACE>;)
+ZMK_BEHAVIOR(grave_nodead,         macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp LS(EQUAL)>, <&kp SPACE>;)
+ZMK_BEHAVIOR(backtick,             macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp LS(EQUAL)>, <&kp SPACE>;)
+ZMK_BEHAVIOR(caret,                macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp GRAVE>, <&kp SPACE>;)
+
+ZMK_BEHAVIOR(indent_line,          macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp HOME>, <&kp TAB>;)
+ZMK_BEHAVIOR(outdent_line,         macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp HOME>, <&kp LS(TAB)>;)
+
+ZMK_BEHAVIOR(undo,                 macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp LC(Z)>;)
+ZMK_BEHAVIOR(redo,                 macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp LC(Y)>;)
+
+ZMK_BEHAVIOR(S_ALL,                macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp LC(A)>;)
+ZMK_BEHAVIOR(S_LINE,               macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp HOME>, <&kp LS(END)>;)
+ZMK_BEHAVIOR(S_NONE,               macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp DOWN>, <&kp UP>, <&kp RIGHT>, <&kp LEFT>;)
+ZMK_BEHAVIOR(S_WORD,               macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp LC(LEFT)>, <&kp LC(LS(RIGHT))>;)
+
+ZMK_BEHAVIOR(ge,                   macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp LS(NON_US_BSLH)>, <&kp LS(N0)>;)
+ZMK_BEHAVIOR(le,                   macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp NON_US_BSLH>, <&kp LS(N0)>;)
+
+ZMK_BEHAVIOR(WIN_POWER_SHUTDOWN,   macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LG(X)>, <&kp R>, <&kp R>;)
+ZMK_BEHAVIOR(WIN_POWER_ENERGY,     macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LG(X)>, <&kp R>, <&kp E>;)
+ZMK_BEHAVIOR(WIN_POWER_REBOOT,     macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LG(X)>, <&kp R>, <&kp N>;)
+ZMK_BEHAVIOR(WIN_POWER_LOCK,       macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LG(L)>;)
+
+ZMK_BEHAVIOR(browser_snipe,        macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LG(LS(LC(T)))>;)
+ZMK_BEHAVIOR(browser_select_item,  macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LG(LS(LC(S)))>;)
+
+ZMK_BEHAVIOR(PROGRAM_OPEN_Teams,   macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LG(LC(LA(LS(T))))>;)
+ZMK_BEHAVIOR(PROGRAM_OPEN_Outlook, macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LG(LC(LA(LS(O))))>;)
+ZMK_BEHAVIOR(PROGRAM_OPEN_Explorer,macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =   <&kp LG(LC(LA(LS(E))))>;)
+ZMK_BEHAVIOR(PROGRAM_OPEN_OneNote, macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LG(LC(LA(LS(N))))>;)
+ZMK_BEHAVIOR(PROGRAM_OPEN_PowPoint,macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LG(LC(LA(LS(P))))>;)
+ZMK_BEHAVIOR(PROGRAM_OPEN_Word,    macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LG(LC(LA(LS(W))))>;)
+ZMK_BEHAVIOR(PROGRAM_OPEN_Excel,   macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LG(LC(LA(LS(Y))))>;)
+ZMK_BEHAVIOR(PROGRAM_Close,        macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LC(W)>;)
+
+ZMK_BEHAVIOR(New_Document,         macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LC(N)>;)
+ZMK_BEHAVIOR(New_Tab,              macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LC(T)>;)
+ZMK_BEHAVIOR(SAVE,                 macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LC(S)>;)
+
+ZMK_BEHAVIOR(TOGLE_GAMING,         macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&tog 5>, <&rgb_ug_status_macro>;)
+ZMK_BEHAVIOR(START_DIABLO,         macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LC(LS(LA(D)))>, <&to 5>, <&rgb_ug_status_macro>;)
