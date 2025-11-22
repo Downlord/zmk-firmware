@@ -188,10 +188,10 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
 #define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
-#define CUT       &kp LC(X)               // CUT - Ctrl + X.
-#define COPY      &kp LC(C)               // COPY - Ctrl + C.
+#define CCUT      &kp LC(X)               // CUT - Ctrl + X.
+#define CCOPY     &kp LC(C)               // COPY - Ctrl + C.
+#define CPASTE    &kp LC(V)               // PASTE - Ctrl + V.
 #define FIND      &kp LC(F)               // FIND - Ctrl + F.
-#define PASTE     &kp LC(V)               // PASTE - Ctrl + V.
 
 /* Keymap */
 
@@ -228,11 +228,11 @@ ZMK_BASE_LAYER(Engram,
 
 ZMK_BASE_LAYER(Cur,
 //╭─────────────┬───────────────┬───────────────┬───────────────┬───────────────╮ ╭───────────────┬───────────────┬───────────────┬─────────────┬────────────────╮
-    &kp LA(F4)    ___             ---             &swapper        CUT          ,   &kp PG_UP       NAV_BSPC        NAV_UP          NAV_DEL       ___            ,
+    &kp LA(F4)    ___             ---             &swapper        CCUT         ,   &kp PG_UP       NAV_BSPC        NAV_UP          NAV_DEL       ___            ,
 //├─────────────┼───────────────┼───────────────┼───────────────┼───────────────┤ ├───────────────┼───────────────┼───────────────┼─────────────┼────────────────┤
-    &sk LGUI      &sk LALT        &sk LSHFT       &sk LCTRL       COPY         ,   &kp PG_DN       NAV_LEFT        NAV_DOWN        NAV_RIGHT     &kp RET        ,
+    &sk LGUI      &sk LALT        &sk LSHFT       &sk LCTRL       CCOPY        ,   &kp PG_DN       NAV_LEFT        NAV_DOWN        NAV_RIGHT     &kp RET        ,
 //├─────────────┼───────────────┼───────────────┼───────────────┼───────────────┤ ├───────────────┼───────────────┼───────────────┼─────────────┼────────────────┤
-    &S_ALL        &S_LINE         &S_WORD         FIND            PASTE        ,   &kp INS         &kp LS(TAB)     &kp TAB         ___           ___            ,
+    &S_ALL        &S_LINE         &S_WORD         FIND            CPASTE       ,   &kp INS         &kp LS(TAB)     &kp TAB         ___           ___            ,
 //╰─────────────┼───────────────┴───────────────┼───────────────┼───────────────┤ ├───────────────┼───────────────┼───────────────┴──────────────────────────────╯
                                   ___             ___             ___           ,   ___             CANCEL          ___        
 //                              ╰───────────────┴───────────────┴───────────────╯ ╰───────────────┴───────────────┴───────────────╯
@@ -252,11 +252,11 @@ ZMK_BASE_LAYER(Fn,
 
 ZMK_BASE_LAYER(Num,
 //╭─────────────┬───────────────┬───────────────┬───────────────┬───────────────╮ ╭───────────────┬───────────────┬───────────────┬─────────────┬────────────────╮
-    ___           ___             ___             ___             CUT           ,   ___             &kp N7          &kp N8          &kp N9        ___            ,
+    ___           ___             ___             ___             CCUT          ,   ___             &kp N7          &kp N8          &kp N9        ___            ,
 //├─────────────┼───────────────┼───────────────┼───────────────┼───────────────┤ ├───────────────┼───────────────┼───────────────┼─────────────┼────────────────┤
-    &sk LGUI      &sk LALT        &sk LSHFT       &sk LCTRL       COPY          ,   ___             &kp N4          &kp N5          &kp N6        ___            ,
+    &sk LGUI      &sk LALT        &sk LSHFT       &sk LCTRL       CCOPY         ,   ___             &kp N4          &kp N5          &kp N6        ___            ,
 //├─────────────┼───────────────┼───────────────┼───────────────┼───────────────┤ ├───────────────┼───────────────┼───────────────┼─────────────┼────────────────┤
-    &S_ALL        &S_LINE         &S_WORD         &FIND           PASTE         ,   ___             &kp N1          &kp N2          &kp N3        ___            ,
+    &S_ALL        &S_LINE         &S_WORD         &FIND           CPASTE        ,   ___             &kp N1          &kp N2          &kp N3        ___            ,
 //╰─────────────┼───────────────┴───────────────┼───────────────┼───────────────┤ ├───────────────┼───────────────┼───────────────┴──────────────────────────────╯
                                   ___             ___             ___           ,   ___             &kp N0          ___        
 //                              ╰───────────────┴───────────────┴───────────────╯ ╰───────────────┴───────────────┴───────────────╯
