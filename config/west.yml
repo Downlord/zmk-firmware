@@ -26,6 +26,9 @@ manifest:
       url-base: https://github.com/urob
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    # add ZMK Prospector dongle support
+    - name: janpfischer
+      url-base: https://github.com/janpfischer  
 
   projects:
     - name: zmk
