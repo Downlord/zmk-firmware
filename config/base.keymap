@@ -147,11 +147,11 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
   ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
                 bindings = <BINDING1>, <BINDING2>;)
 
-// Tap: comma | Shift + tap: semicolon | Ctrl + shift + tap: <.
+// Tap: comma | Shift + tap: semicolon | Ctrl + shift + tap: LESS_THAN.
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
 SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
 
-// Tap: dot | Shift + tap: colon | Ctrl + shift + tap: >.
+// Tap: dot | Shift + tap: colon | Ctrl + shift + tap: GREATER_THAN.
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
 SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
 
@@ -162,7 +162,7 @@ SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
 SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
 SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
-// Tap: space | Shift + tap: dot -> space -> sticky shift | Hold: nav layer.
+// Tap: space | Shift + tap: dot to space to sticky shift | Hold: nav layer.
 ZMK_HOLD_TAP(lt_spc, bindings = <&mo>, <&spc_morph>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
@@ -195,7 +195,7 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 
 /* Keymap */
 
-ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
+ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM to SYS.
 
 #ifndef ZMK_BASE_LAYER
   #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                 \
