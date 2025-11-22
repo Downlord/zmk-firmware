@@ -61,5 +61,15 @@ manifest:
           - lvgl
           - tinycrypt
 
+    # eyelash corne
+    - name: eyelash_corne
+      url: https://github.com/a741725193/zmk-new_corne
+      revision: main
+
+    # add ZMK Prospector dongle support
+    - name: zmk-dongle-screen
+      remote: janpfischer
+      revision: main
+
   self:
     path: config
