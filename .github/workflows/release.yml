@@ -1,0 +1,113 @@
+name: Generate Release
+run-name: Creating new Release 🚀
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Build ZMK firmware]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: write
+  discussions: write
+  actions: write
+   
+jobs:
+  on-failure:
+    runs-on: 
+      - ubuntu-latest
+      # - self-hosted
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo "building release workflow was a failure"
+
+  release:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Get Next Version
+        id: semver
+        uses: ietf-tools/semver-action@v1
+        with:
+          token: ${{ github.token }}
+          branch: main
+          patchAll: true
+          noNewCommitBehavior: error
+          noVersionBumpBehavior: error
+          fallbackTag: v0.0.1
+      
+      - name: Download artifact
+        id: download-artifact 
+        uses: dawidd6/action-download-artifact@v9
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          workflow: build.yml
+          workflow_search: false
+          workflow_conclusion: success
+
+      - name: Copy result out of nix store
+        run: cp glove80.uf2/glove80.uf2 glove80_${{ steps.semver.outputs.next }}.uf2
+
+
+      - name: Rename left result out of nix store
+        run: mv firmware/eyelash_corne_studio_left.uf2 firmware/corne_left_${{ steps.semver.outputs.next }}.uf2
+
+      - name: Rename right result out of nix store
+        run: mv firmware/nice_view-eyelash_corne_right-zmk.uf2 firmware/corne_right_${{ steps.semver.outputs.next }}.uf2
+
+      - name: Rename left result out of nix store
+        run: mv firmware/settings_reset-eyelash_corne_left-zmk.uf2 firmware/corne_RESET_${{ steps.semver.outputs.next }}.uf2
+
+      - name: rename prospector result out of nix store
+        run: mv firmware/totem-dongle-screen.uf2 firmware/totem_dongle_${{ steps.semver.outputs.next }}.uf2
+      
+      - name: rename reset result out of nix store
+        run: mv firmware/totem-settings-reset.uf2 firmware/totem_settings_reset_${{ steps.semver.outputs.next }}.uf2
+
+      - name: rename left result out of nix store
+        run: mv firmware/totem-dongle-left.uf2 firmware/totem_dongle_left_${{ steps.semver.outputs.next }}.uf2
+
+      - name: rename right result out of nix store
+        run: mv firmware/totem-dongle-right.uf2 firmware/totem_dongle_right_${{ steps.semver.outputs.next }}.uf2
+      
+      - name: rename left result out of nix store
+        run: mv firmware/totem-left.uf2 firmware/totem_left_${{ steps.semver.outputs.next }}.uf2
+
+      - name: rename right result out of nix store
+        run: mv firmware/totem-right.uf2 firmware/totem_right_${{ steps.semver.outputs.next }}.uf2
+
+      - name: Conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v5
+        with:
+          github-token: ${{ github.token }}
+          output-file: "false"
+        
+      - name: Release
+        uses: softprops/action-gh-release@v2.2.2
+        with:
+          name: Release ${{ steps.semver.outputs.next }}
+          tag_name: ${{ steps.semver.outputs.next }}
+          generate_release_notes: true
+          make_latest: true
+          body: ${{ steps.changelog.outputs.clean_changelog }}
+          files: |
+            glove80_${{ steps.changelog.outputs.tag }}.uf2
+            firmware/corne_left_${{ steps.semver.outputs.next }}.uf2
+            firmware/corne_right_${{ steps.semver.outputs.next }}.uf2
+            firmware/corne_RESET_${{ steps.semver.outputs.next }}.uf2          
+            firmware/totem_dongle_${{ steps.semver.outputs.next }}.uf2
+            firmware/totem_settings_reset_${{ steps.semver.outputs.next }}.uf2
+            firmware/totem_dongle_left_${{ steps.semver.outputs.next }}.uf2
+            firmware/totem_dongle_right_${{ steps.semver.outputs.next }}.uf2
+            firmware/totem_left_${{ steps.semver.outputs.next }}.uf2
+            firmware/totem_right_${{ steps.semver.outputs.next }}.uf2
+
+      - name: cleanup firware directory
+        run: rm -rf firmware
