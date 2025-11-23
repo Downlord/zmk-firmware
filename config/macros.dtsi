@@ -45,5 +45,5 @@ ZMK_BEHAVIOR(New_Document,         macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <
 ZMK_BEHAVIOR(New_Tab,              macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LC(T)>;)
 ZMK_BEHAVIOR(SAVE,                 macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LC(S)>;)
 
-ZMK_BEHAVIOR(TOGLE_GAMING,         macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&tog 5>, <&rgb_ug_status_macro>;)
-ZMK_BEHAVIOR(START_DIABLO,         macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LC(LS(LA(D)))>, <&to 5>, <&rgb_ug_status_macro>;)
+// ZMK_BEHAVIOR(TOGLE_GAMING,         macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&tog 5>, <&rgb_ug_status_macro>;)
+// ZMK_BEHAVIOR(START_DIABLO,         macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings =  <&kp LC(LS(LA(D)))>, <&to 5>, <&rgb_ug_status_macro>;)
