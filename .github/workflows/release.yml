@@ -17,13 +17,15 @@ jobs:
   on-failure:
     runs-on: 
       - ubuntu-latest
-      # - self-hosted
+      - self-hosted
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
       - run: echo "building release workflow was a failure"
 
   release:
-    runs-on: ubuntu-latest
+    runs-on:
+      - ubuntu-latest
+      - self-hosted
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
 
