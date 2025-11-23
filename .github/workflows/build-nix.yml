@@ -8,8 +8,6 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hosted]
-  steps:
     uses: urob/zmk-actions/.github/workflows/build-user-config.yml@main
     with:
       # Set to 'gnuarmemb' 'zephyr' or 'zephyr-full' (from fastest to
