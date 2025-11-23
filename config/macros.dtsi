@@ -12,6 +12,10 @@ ZMK_BEHAVIOR(outdent_line,         macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <
 ZMK_BEHAVIOR(undo,                 macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp LC(Z)>;)
 ZMK_BEHAVIOR(redo,                 macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp LC(Y)>;)
 
+ZMK_BEHAVIOR(CCUT,                 macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp LC(X)>;)
+ZMK_BEHAVIOR(CCOPY,                macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp LC(C)>;)
+ZMK_BEHAVIOR(CPASTE,               macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp LC(V)>;)
+
 ZMK_BEHAVIOR(S_ALL,                macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp LC(A)>;)
 ZMK_BEHAVIOR(S_LINE,               macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp HOME>, <&kp LS(END)>;)
 ZMK_BEHAVIOR(S_NONE,               macro, tap-ms = <MACRO_TAP_FAST>; wait-ms = <MACRO_WAIT_FAST>; bindings = <&kp DOWN>, <&kp UP>, <&kp RIGHT>, <&kp LEFT>;)
